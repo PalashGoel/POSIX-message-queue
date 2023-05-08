@@ -1,0 +1,13 @@
+Setup
+1 make build
+2 make image 
+3 make load
+4 kubectl craete -f pod.yaml
+5 kubectl get po posix-mq-pod -n default
+6 kubectl logs -f posix-mq-pod -c posix-mq-receiver -n default
+7 kubectl logs -f posix-mq-pod -c posix-mq-sender -n default
+
+Cleanup
+1 kubectl delete -f pod.yaml
+2 make unload
+3 rm -rf sender receiver
